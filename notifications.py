@@ -15,7 +15,3 @@ class Notifications:
             from_=self.phone_number,
             body=msg
         )
-
-if __name__ == '__main__':
-    #n = Notifications()
-    #n.send_msg("+12407164496", "Test")
