@@ -1,10 +1,11 @@
 from twilio.rest import Client
+from twilio_account import *
 
 class Notifications:
     def __init__(self):
-        self.account_sid = "AC654184a0b3f3013f2a3a2460fb549b59"
-        self.auth_token = "9c0d854d91f329393e3ebef02291603a"
-        self.phone_number = "+14807198702"
+        self.account_sid = get_account_sid()
+        self.auth_token = get_auth_token()
+        self.phone_number = get_phone_number()
         self.client = Client(self.account_sid, self.auth_token)
 
     ## phone numbers: "+1**********" ---> +1 represents country code
