@@ -7,6 +7,27 @@ function render_items(items) {
   )
 }
 
+function eta_format(eta) {
+  let h = ""
+  let m = ""
+  let s = ""
+
+  if(eta.h < 10) {
+    h += 0
+  }
+  if(eta.m < 10) {
+    m += 0
+  }
+  if(eta.s < 10) {
+    s += 0
+  }
+
+  h += eta.h
+  m += eta.m
+  s += eta.s
+  return h + ":" + m + ":" + s
+}
+
 function OrderInfo(props) {
   const info = props.order ? (
     <div>
@@ -18,6 +39,7 @@ function OrderInfo(props) {
         {render_items(props.order.items)}
       </ul>
       <h3>Phase: {props.order.phase}</h3>
+      <h3>ETA: {eta_format(props.order.eta)}</h3>
     </div>
   ) : "Click on an order to view extra information.";
 
